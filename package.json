@@ -1,0 +1,22 @@
+{
+  "name": "HerokuAPI",
+  "version": "0.1",
+  "description": "making an API",
+  "license": "MIT",
+  "author": "Zach Bush",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zachbush96/HerokuAPI.git"
+  },
+  "main": "sctipt.js",
+  "files": [
+    "Procfile",
+    "script.js"
+  ],
+  "dependencies": {
+    "express": "^4.16.4",
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
