@@ -34,7 +34,6 @@
     const zipCode = document.getElementById('ZipCode1').value;
     const response = await fetch("https://simple-sample-api.herokuapp.com/api/v1/weatherbyZip?zip="+zipCode)
     const data = await response.json()
-    console.log(data);
     const actualTemp = data['main']['feels_like'];
     document.getElementById('temp').textContent = "Feels Like: "+ actualTemp + " degrees";
     console.log(data);
