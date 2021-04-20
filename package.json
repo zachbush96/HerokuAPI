@@ -11,7 +11,7 @@
     "script.js"
   ],
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.16.4"
   },
   "engines": {
     "node": ">=0.10.0"
