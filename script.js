@@ -35,7 +35,7 @@ app.get('/api/v1/weatherbyZip', (req, res) => {
     res.send("ERROR ENCOUNTERED")
   })
 
-  req.end()
+  req2.end()
  
  
  return res.send(weatherData)
