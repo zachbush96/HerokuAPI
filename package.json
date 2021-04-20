@@ -11,7 +11,9 @@
     "script.js"
   ],
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "body-parser": ">=1.19.0",
+    "cors": ">=2.8.5"
   },
   "engines": {
     "node": ">=0.10.0"
