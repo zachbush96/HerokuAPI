@@ -16,7 +16,7 @@ async function getData(zipCode){
   const req = https.request(options, res => {
   console.log(`statusCode: ${res.statusCode}`)
   res.on('data', d => {
-    reaturn d
+    return d
   })
 })
 req.on('error', error => {
