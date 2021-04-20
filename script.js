@@ -23,7 +23,7 @@ app.get('/api/v1/weatherbyZip', (req, res) => {
     method: 'GET'
   }
   const req2 = https.request(options, res2 => {
-    console.log(`statusCode: ${res.statusCode}`)
+    console.log(`statusCode: ${res2.statusCode}`)
     res2.on('data', d => {
      console.log("This is D: " + d) 
      res.send(d)
