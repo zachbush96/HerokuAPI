@@ -23,6 +23,7 @@ req.on('error', error => {
   console.error(error)
 })
 req.end()
+}
 
 app.use(express.static("landing-page"))
 
