@@ -3,7 +3,7 @@ const app = express()
 const PORT = process.env.PORT || 3000
 
 app.get('/', (req, res) => {
- return res.send("WERE HERE!")
+ res.sendFile('./landing-page/home.html', {root: __dirname });
   
 });
 app.post('/api/v1/weatherbyZip', (req, res) => {
