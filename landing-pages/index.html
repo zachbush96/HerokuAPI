@@ -28,24 +28,8 @@
 -->
   <label for="ZipCode1">Enter Zip Code:</label>
   <input name="ZipCode1" id="ZipCode1" value="" maxlength=5 type="numbers">
-  <button id="submitButton" onClick=getWeatherData()>Send Data</button>
-<button id="localButton" onClick=getWeatherLocally()>Dont Click Me Yet</button>
+  <button id="localButton" onClick=getWeatherLocally()>Get Weather</button>
   <script> 
-  const api_url = "https://api.openweathermap.org/data/2.5/weather?zip=";
-  const appid = "&units=imperial&appid=6ceb02706b07605db27fb252a1bf8521";
-  
-  async function getWeatherData() {
-    const zipCode = document.getElementById('ZipCode1').value;
-    console.log("Someone Searched: " + zipCode);
-    const completeURL = api_url + zipCode + appid;
-    console.log(completeURL);
-    const response = await fetch(api_url + zipCode + appid);
-    const data = await response.json();
-    const actualTemp = data['main']['feels_like'];
-    document.getElementById('temp').textContent = "Feels Like: "+ actualTemp + " degrees";
-    console.log(data);
-    document.getElementById("description").textContent = "Weather in  " + data['name'] +": "+ data['weather'][0]['description'];
-    return data;
 }
 async function getWeatherLocally() {
   const zipCode = document.getElementById('ZipCode1').value;
@@ -57,7 +41,6 @@ async function getWeatherLocally() {
   console.log(data);
   document.getElementById("description").textContent = "Weather in  " + data['name'] +": "+ data['weather'][0]['description'];
 }
-
   </script>
 </body>
 </html>
