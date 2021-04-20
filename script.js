@@ -22,9 +22,9 @@ app.get('/api/v1/weatherbyZip', (req, res) => {
     path: '/data/2.5/weather?zip=' + zipCode + appid,
     method: 'GET'
   }
-  const req2 = https.request(options, res => {
+  const req2 = https.request(options, res2 => {
     console.log(`statusCode: ${res.statusCode}`)
-    res.on('data', d => {
+    res2.on('data', d => {
      console.log("This is D: " + d) 
      res.send(d)
     })
