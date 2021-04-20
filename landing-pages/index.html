@@ -19,6 +19,13 @@
   <br>  
   <span id="temp"></span>
   <br><br>  
+ <!--<form action="https://simple-sample-api.herokuapp.com/api/v1/weatherbyZip" method="GET">
+    <label for="ZipCode1">Enter Zip Code:</label>
+    <input name="ZipCode1" id="ZipCode1" value="" maxlength=5 type="numbers">
+    <button id="submitButton" onClick=getWeatherData()>Send Data</button>
+    <button id="localButton" type="submit">Submit</button>  
+  </form>
+-->
   <label for="ZipCode1">Enter Zip Code:</label>
   <input name="ZipCode1" id="ZipCode1" value="" maxlength=5 type="numbers">
   <button id="submitButton" onClick=getWeatherData()>Send Data</button>
@@ -45,6 +52,10 @@ async function getWeatherLocally() {
   const response = await fetch("https://simple-sample-api.herokuapp.com/api/v1/weatherbyZip?zip="+zipCode)
   const data = await response.json()
   console.log(data);
+  const actualTemp = data['main']['feels_like'];
+  document.getElementById('temp').textContent = "Feels Like: "+ actualTemp + " degrees";
+  console.log(data);
+  document.getElementById("description").textContent = "Weather in  " + data['name'] +": "+ data['weather'][0]['description'];
 }
 
   </script>
