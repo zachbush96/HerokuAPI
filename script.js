@@ -25,7 +25,7 @@ app.get('/api/v1/weatherbyZip', (req, res) => {
       console.log(json);
       res.send(json)
   })
-}
+};
  
  console.log("THIS DATA -->" + getData(req.query.zip))
 res.send("Is this Getting Sent?")
