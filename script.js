@@ -26,7 +26,7 @@ app.get('/api/v1/weatherbyZip', (req, res) => {
     console.log(`statusCode: ${res.statusCode}`)
     res.on('data', d => {
      console.log("This is D: " + d) 
-     weatherData = d
+     res.send(d)
     })
   })
   req2.on('error', error => {
@@ -35,7 +35,7 @@ app.get('/api/v1/weatherbyZip', (req, res) => {
   req2.end()
  
  
- return res.send(weatherData)
+ return res.send("Is this Getting Sent?")
   
 });
 
