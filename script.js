@@ -3,7 +3,7 @@ const app = express()
 const PORT = process.env.PORT || 3000
 
 app.get('/test', (req, res) => {
- res.sendFile('./landing-page/home.html', {root: __dirname });
+ res.sendFile('/landing-page/home.html', {root: __dirname });
 });
 
 app.get('/', (req,res) =>{
