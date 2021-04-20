@@ -4,7 +4,7 @@ const https = require('https')
 const app = express()
 const PORT = process.env.PORT || 3000
 
-async function getData(zipCode){
+function getData(zipCode){
  const api_url = "https://api.openweathermap.org/data/2.5/weather?zip=";
  const appid = "&units=imperial&appid=6ceb02706b07605db27fb252a1bf8521";
  const options = {
