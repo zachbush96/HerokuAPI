@@ -1,4 +1,6 @@
 const express = require('express')
+const heeps = require('https')
+
 const app = express()
 const PORT = process.env.PORT || 3000
 
@@ -9,11 +11,33 @@ app.get('/', (req,res) =>{
  
 });
 app.post('/api/v1/weatherbyZip', (req, res) => {
- const api_key = precess.env.OpenWeatherAPIKey;
- const zip_url = "api.openweathermap.org/data/2.5/weather?zip=";
+ weatherData = {} 
+ const api_url = "https://api.openweathermap.org/data/2.5/weather?zip=";
+  const appid = "&units=imperial&appid=6ceb02706b07605db27fb252a1bf8521";
+  const zipCode = req.query.zip
+  const options = {
+    hostname: 'api.openweathermap.org',
+    port: 443,
+    path: '/data/2.5/weather?zip=' + zipCode + appid,
+    method: 'GET'
+  }
+
+  const req2 = https.request(options, res => {
+    console.log(`statusCode: ${res.statusCode}`)
+
+    res.on('data', d => {
+      weatherData = d
+    })
+  })
+
+  req.on('error', error => {
+    res.send("ERROR ENCOUNTERED")
+  })
+
+  req.end()
  
  
- return res.send(weatherInfo)
+ return res.send(weatherData)
   
 });
 
