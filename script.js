@@ -16,7 +16,7 @@ function getData(zipCode){
   const req = https.request(options, res => {
   console.log(`statusCode: ${res.statusCode}`)
   res.on('data', d => {
-    return d
+    console.log(d)
   })
 })
 req.on('error', error => {
