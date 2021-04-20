@@ -22,19 +22,16 @@ app.get('/api/v1/weatherbyZip', (req, res) => {
     path: '/data/2.5/weather?zip=' + zipCode + appid,
     method: 'GET'
   }
-
   const req2 = https.request(options, res => {
     console.log(`statusCode: ${res.statusCode}`)
-
     res.on('data', d => {
-      weatherData = d
+     console.log("This is D: " + d) 
+     weatherData = d
     })
   })
-
-  req.on('error', error => {
+  req2.on('error', error => {
     res.send("ERROR ENCOUNTERED")
   })
-
   req2.end()
  
  
