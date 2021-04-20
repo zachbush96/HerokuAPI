@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3000
 app.use(express.static("landing-page"))
 
 app.get('/', (req,res) =>{
- res.sendFile('index.html', {root: __dirname + '/landing-pages'});
+ res.sendFile('index.html', {root: __dirname + '/landing-pages/'});
  
 });
 app.post('/api/v1/weatherbyZip', (req, res) => {
