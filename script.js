@@ -10,7 +10,7 @@ app.get('/', (req,res) =>{
  res.sendFile('index.html', {root: __dirname + '/landing-pages'});
  
 });
-app.post('/api/v1/weatherbyZip', (req, res) => {
+app.get('/api/v1/weatherbyZip', (req, res) => {
   weatherData = {} 
  if(!req.query.zip){res.send("NO DATA SUMBITTED")} 
  const api_url = "https://api.openweathermap.org/data/2.5/weather?zip=";
