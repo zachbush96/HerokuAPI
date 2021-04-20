@@ -1,28 +1,16 @@
 const express = require('express')
 const https = require('https')
+const fetch = require('node-fetch')
 
 const app = express()
 const PORT = process.env.PORT || 3000
 
-function getData(zipCode){
+async function getData(zipCode){
  const api_url = "https://api.openweathermap.org/data/2.5/weather?zip=";
  const appid = "&units=imperial&appid=6ceb02706b07605db27fb252a1bf8521";
- const options = {
-    hostname: 'api.openweathermap.org',
-    port: 443,
-    path: '/data/2.5/weather?zip=' + zipCode + appid,
-    method: 'GET'
-  }
-  const req = https.request(options, res => {
-  console.log(`statusCode: ${res.statusCode}`)
-  res.on('data', d => {
-    console.log(d)
-  })
-})
-req.on('error', error => {
-  console.error(error)
-})
-req.end()
+ fetch(api_url+zipCode+appid)
+   .then(res => res.json())
+   .then(json => return json)
 }
 
 app.use(express.static("landing-page"))
