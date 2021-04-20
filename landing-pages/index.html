@@ -29,6 +29,7 @@
   
   async function getWeatherData() {
     const zipCode = document.getElementById('ZipCode1').value;
+    console.log("Someone Searched: " + zipCode);
     const completeURL = api_url + zipCode + appid;
     console.log(completeURL);
     const response = await fetch(api_url + zipCode + appid);
