@@ -11,7 +11,8 @@ app.get('/', (req,res) =>{
  
 });
 app.post('/api/v1/weatherbyZip', (req, res) => {
- weatherData = {} 
+  weatherData = {} 
+ if(!req.query.zip){res.send("NO DATA SUMBITTED")} 
  const api_url = "https://api.openweathermap.org/data/2.5/weather?zip=";
   const appid = "&units=imperial&appid=6ceb02706b07605db27fb252a1bf8521";
   const zipCode = req.query.zip
