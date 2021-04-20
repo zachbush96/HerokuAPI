@@ -4,11 +4,8 @@
   "description": "making an API",
   "license": "MIT",
   "author": "Zach Bush",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zachbush96/HerokuAPI.git"
-  },
-  "main": "sctipt.js",
+
+  "main": "script.js",
   "files": [
     "Procfile",
     "script.js"
